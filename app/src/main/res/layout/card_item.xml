@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/itemIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/itemNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Bifacial Module"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/itemIv"
+            app:layout_constraintTop_toTopOf="@+id/itemIv" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/itemPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="KES 90000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/itemNameTv"
+            app:layout_constraintTop_toBottomOf="@+id/itemNameTv" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/itemSizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="/2 items"
+            app:layout_constraintBottom_toBottomOf="@+id/itemPriceTv"
+            app:layout_constraintStart_toEndOf="@+id/itemPriceTv"
+            app:layout_constraintTop_toTopOf="@+id/itemPriceTv" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/itemStatusTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="This vendor is out of this item"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/itemPriceTv"
+            app:layout_constraintTop_toBottomOf="@+id/itemPriceTv" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="@+id/itemIv"
+            app:layout_constraintTop_toBottomOf="@+id/itemIv" >
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/itemAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="@+id/add"
+            app:layout_constraintStart_toEndOf="@+id/add"
+            app:layout_constraintTop_toTopOf="@+id/add" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/minus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/add"
+            app:layout_constraintStart_toEndOf="@+id/itemAmount"
+            app:layout_constraintTop_toTopOf="@+id/add">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_remove" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/buyFromOthersCv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/minus"
+            app:layout_constraintEnd_toStartOf="@+id/deleteItemIv"
+            app:layout_constraintStart_toEndOf="@+id/minus"
+            style="@style/Widget.Material3.CardView.Elevated"
+            app:cardCornerRadius="3dp"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="@+id/minus">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Buy from other vendors" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/deleteItemIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@+id/minus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/minus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
